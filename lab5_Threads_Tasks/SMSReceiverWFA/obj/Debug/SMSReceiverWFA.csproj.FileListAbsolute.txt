@@ -1,0 +1,56 @@
+C:\Users\OLKL\documents\visual studio 2015\Projects\lab3\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.csprojResolveAssemblyReference.cache
+C:\Users\OLKL\documents\visual studio 2015\Projects\lab3\SMSReceiverWFA\obj\Debug\SimCorp.IMS.SMSReceiverWFA.SMSReceiverForm.resources
+C:\Users\OLKL\documents\visual studio 2015\Projects\lab3\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.Properties.Resources.resources
+C:\Users\OLKL\documents\visual studio 2015\Projects\lab3\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.csproj.GenerateResource.Cache
+C:\Users\OLKL\documents\visual studio 2015\Projects\lab3\SMSReceiverWFA\bin\Debug\SMSReceiverWFA.exe.config
+C:\Users\OLKL\documents\visual studio 2015\Projects\lab3\SMSReceiverWFA\bin\Debug\SMSReceiverWFA.exe
+C:\Users\OLKL\documents\visual studio 2015\Projects\lab3\SMSReceiverWFA\bin\Debug\SMSReceiverWFA.pdb
+C:\Users\OLKL\documents\visual studio 2015\Projects\lab3\SMSReceiverWFA\bin\Debug\MobilePhoneClassLib.dll
+C:\Users\OLKL\documents\visual studio 2015\Projects\lab3\SMSReceiverWFA\bin\Debug\UnderstandingOOP.dll
+C:\Users\OLKL\documents\visual studio 2015\Projects\lab3\SMSReceiverWFA\bin\Debug\UnderstandingOOP.pdb
+C:\Users\OLKL\documents\visual studio 2015\Projects\lab3\SMSReceiverWFA\bin\Debug\MobilePhoneClassLib.pdb
+C:\Users\OLKL\documents\visual studio 2015\Projects\lab3\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.exe
+C:\Users\OLKL\documents\visual studio 2015\Projects\lab3\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.pdb
+F:\OLKL\C# preparation\C# Preparation Labs\lab3_Repo\SMSReceiverWFA\bin\Debug\SMSReceiverWFA.exe.config
+F:\OLKL\C# preparation\C# Preparation Labs\lab3_Repo\SMSReceiverWFA\bin\Debug\SMSReceiverWFA.exe
+F:\OLKL\C# preparation\C# Preparation Labs\lab3_Repo\SMSReceiverWFA\bin\Debug\SMSReceiverWFA.pdb
+F:\OLKL\C# preparation\C# Preparation Labs\lab3_Repo\SMSReceiverWFA\bin\Debug\MobilePhoneClassLib.dll
+F:\OLKL\C# preparation\C# Preparation Labs\lab3_Repo\SMSReceiverWFA\bin\Debug\UnderstandingOOP.dll
+F:\OLKL\C# preparation\C# Preparation Labs\lab3_Repo\SMSReceiverWFA\bin\Debug\UnderstandingOOP.pdb
+F:\OLKL\C# preparation\C# Preparation Labs\lab3_Repo\SMSReceiverWFA\bin\Debug\MobilePhoneClassLib.pdb
+F:\OLKL\C# preparation\C# Preparation Labs\lab3_Repo\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.csprojResolveAssemblyReference.cache
+F:\OLKL\C# preparation\C# Preparation Labs\lab3_Repo\SMSReceiverWFA\obj\Debug\SimCorp.IMS.SMSReceiverWFA.SMSReceiverForm.resources
+F:\OLKL\C# preparation\C# Preparation Labs\lab3_Repo\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.Properties.Resources.resources
+F:\OLKL\C# preparation\C# Preparation Labs\lab3_Repo\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.csproj.GenerateResource.Cache
+F:\OLKL\C# preparation\C# Preparation Labs\lab3_Repo\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.exe
+F:\OLKL\C# preparation\C# Preparation Labs\lab3_Repo\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.pdb
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.csprojResolveAssemblyReference.cache
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\SMSReceiverWFA\obj\Debug\SimCorp.IMS.SMSReceiverWFA.SMSReceiverForm.resources
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.Properties.Resources.resources
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.csproj.GenerateResource.Cache
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\SMSReceiverWFA\bin\Debug\SMSReceiverWFA.exe.config
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\SMSReceiverWFA\bin\Debug\SMSReceiverWFA.exe
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\SMSReceiverWFA\bin\Debug\SMSReceiverWFA.pdb
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\SMSReceiverWFA\bin\Debug\Messages.dll
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\SMSReceiverWFA\bin\Debug\MobilePhoneClassLib.dll
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\SMSReceiverWFA\bin\Debug\UnderstandingOOP.dll
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\SMSReceiverWFA\bin\Debug\Messages.pdb
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\SMSReceiverWFA\bin\Debug\UnderstandingOOP.pdb
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\SMSReceiverWFA\bin\Debug\MobilePhoneClassLib.pdb
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.exe
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.pdb
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\SMSReceiverWFA\bin\Debug\SMSReceiverWFA.exe.config
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\SMSReceiverWFA\bin\Debug\SMSReceiverWFA.exe
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\SMSReceiverWFA\bin\Debug\SMSReceiverWFA.pdb
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\SMSReceiverWFA\bin\Debug\Messages.dll
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\SMSReceiverWFA\bin\Debug\MobilePhoneClassLib.dll
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\SMSReceiverWFA\bin\Debug\UnderstandingOOP.dll
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\SMSReceiverWFA\bin\Debug\Messages.pdb
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\SMSReceiverWFA\bin\Debug\UnderstandingOOP.pdb
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\SMSReceiverWFA\bin\Debug\MobilePhoneClassLib.pdb
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.csprojResolveAssemblyReference.cache
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\SMSReceiverWFA\obj\Debug\SimCorp.IMS.SMSReceiverWFA.SMSReceiverForm.resources
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.Properties.Resources.resources
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.csproj.GenerateResource.Cache
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.exe
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\SMSReceiverWFA\obj\Debug\SMSReceiverWFA.pdb

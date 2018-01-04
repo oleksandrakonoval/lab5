@@ -1,0 +1,16 @@
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\TestFilters\bin\Debug\TestFilters.dll
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\TestFilters\bin\Debug\TestFilters.pdb
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\TestFilters\bin\Debug\Messages.dll
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\TestFilters\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\TestFilters\bin\Debug\Messages.pdb
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\TestFilters\obj\Debug\TestFilters.csprojResolveAssemblyReference.cache
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\TestFilters\obj\Debug\TestFilters.dll
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\TestFilters\obj\Debug\TestFilters.pdb
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\TestFilters\bin\Debug\TestFilters.dll
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\TestFilters\bin\Debug\TestFilters.pdb
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\TestFilters\bin\Debug\Messages.dll
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\TestFilters\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\TestFilters\bin\Debug\Messages.pdb
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\TestFilters\obj\Debug\TestFilters.csprojResolveAssemblyReference.cache
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\TestFilters\obj\Debug\TestFilters.dll
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\TestFilters\obj\Debug\TestFilters.pdb

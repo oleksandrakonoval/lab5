@@ -1,0 +1,19 @@
+F:\OLKL\C# preparation\C# Preparation Labs\lab2_Interfaces\MobilePhoneLibrary\bin\Debug\UnderstandingOOP.dll
+F:\OLKL\C# preparation\C# Preparation Labs\lab2_Interfaces\MobilePhoneLibrary\bin\Debug\UnderstandingOOP.pdb
+F:\OLKL\C# preparation\C# Preparation Labs\lab2_Interfaces\MobilePhoneLibrary\obj\Debug\MobilePhoneLibrary.csprojResolveAssemblyReference.cache
+F:\OLKL\C# preparation\C# Preparation Labs\lab2_Interfaces\MobilePhoneLibrary\obj\Debug\UnderstandingOOP.dll
+F:\OLKL\C# preparation\C# Preparation Labs\lab2_Interfaces\MobilePhoneLibrary\obj\Debug\UnderstandingOOP.pdb
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\MobilePhoneLibrary\bin\Debug\UnderstandingOOP.dll
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\MobilePhoneLibrary\bin\Debug\UnderstandingOOP.pdb
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\MobilePhoneLibrary\obj\Debug\MobilePhoneLibrary.csprojResolveAssemblyReference.cache
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\MobilePhoneLibrary\obj\Debug\UnderstandingOOP.dll
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\MobilePhoneLibrary\obj\Debug\UnderstandingOOP.pdb
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\MobilePhoneLibrary\bin\Debug\Messages.dll
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\MobilePhoneLibrary\bin\Debug\Messages.pdb
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\MobilePhoneLibrary\bin\Debug\UnderstandingOOP.dll
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\MobilePhoneLibrary\bin\Debug\UnderstandingOOP.pdb
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\MobilePhoneLibrary\bin\Debug\Messages.dll
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\MobilePhoneLibrary\bin\Debug\Messages.pdb
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\MobilePhoneLibrary\obj\Debug\MobilePhoneLibrary.csprojResolveAssemblyReference.cache
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\MobilePhoneLibrary\obj\Debug\UnderstandingOOP.dll
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\MobilePhoneLibrary\obj\Debug\UnderstandingOOP.pdb

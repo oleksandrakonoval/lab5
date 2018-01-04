@@ -1,0 +1,5 @@
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\TestCharge\bin\Debug\TestCharge.dll
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\TestCharge\bin\Debug\TestCharge.pdb
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\TestCharge\obj\Debug\TestCharge.csprojResolveAssemblyReference.cache
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\TestCharge\obj\Debug\TestCharge.dll
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\TestCharge\obj\Debug\TestCharge.pdb

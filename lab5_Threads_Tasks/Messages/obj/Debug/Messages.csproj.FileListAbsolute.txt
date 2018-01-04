@@ -1,0 +1,8 @@
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\Messages\bin\Debug\Messages.dll
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\Messages\bin\Debug\Messages.pdb
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\Messages\obj\Debug\Messages.dll
+U:\Training\C# Preparation\lab4\lab4_LINQ_Collections\Messages\obj\Debug\Messages.pdb
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\Messages\bin\Debug\Messages.dll
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\Messages\bin\Debug\Messages.pdb
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\Messages\obj\Debug\Messages.dll
+U:\Training\C# Preparation\lab5\lab5_Threads_Tasks\Messages\obj\Debug\Messages.pdb
