@@ -1,4 +1,7 @@
-﻿namespace SimCorp.IMS.MobilePhoneLibrary.MobilePhoneComponents {
+﻿using System;
+using System.Windows.Forms;
+
+namespace SimCorp.IMS.MobilePhoneLibrary.MobilePhoneComponents {
     public enum BatteryType {
         LiionBattery,
         NiCdBattery,
@@ -11,12 +14,16 @@
 
         public double Capacity { get; set; }
 
+        public int Charger { get; set; }
+
         public Battery():this(200, (BatteryType)0) {
             this.Capacity = 200;
+            this.Charger = 100;
         }
 
         public Battery(int capacity, BatteryType bType) {
             this.Capacity = capacity > 0 ? capacity : 200;
+            this.Charger = 100;
             if (((int)bType >= 0) && ((int)bType <= 3)) {
                 this.BatteryType = bType;
             }
@@ -25,6 +32,13 @@
 
         public override string ToString() {
             return $"Battery capacity is {this.Capacity} mAh \r\nBattery type is {this.BatteryType}";
+        }
+
+        public void DisplayChargeChanges(ProgressBar progressBarCharge, int charger) {
+            if (progressBarCharge.InvokeRequired) {
+                progressBarCharge.Invoke(new Action<ProgressBar, int>(DisplayChargeChanges), progressBarCharge, charger);
+            }
+            else progressBarCharge.Value = charger;
         }
     }
 }

@@ -11,11 +11,12 @@ namespace SimCorp.IMS.SMSReceiverWFA {
 
     public partial class SMSReceiverForm : Form {
 
-        static System.Windows.Forms.Timer timer;
         IOutput output;
         SimCorpMobile MyMobile;
         Format Format = new Format();
         List<MyMessage> myReceivedMessages = new List<MyMessage>();
+        Thread chargerDischarge;
+        Thread chargerCharge;
 
         public SMSReceiverForm() {
             InitializeComponent();
@@ -27,53 +28,41 @@ namespace SimCorp.IMS.SMSReceiverWFA {
             output = new WFAOutputRichTextBox(richTextBox1);
             MyMobile.Storage.SMSAdded += (message) => MyMobile.Storage.LogAdd(storageLogTextBox, message);
             MyMobile.Storage.SMSRemoved += (message) => MyMobile.Storage.LogRemove(storageLogTextBox, message);
+
+            chargerDischarge = new Thread(Discharge);
+            chargerCharge = new Thread(Charge);
+            chargerDischarge.Start();
+            
         }
 
-       
-
-        private void SMSReceiverForm_Load(object sender, System.EventArgs e) {
-            timer = new System.Windows.Forms.Timer();
-            timer.Interval = 1500;
-            timer.Tick += new EventHandler(timer_Tick);
-            //timer.Start();
+        private void Charge() {
+            while (MyMobile.Battery.Charger < 100) {
+                lock (MyMobile.Battery) {                   
+                    MyMobile.Battery.Charger += 1;                    
+                    MyMobile.Battery.DisplayChargeChanges(progressBarCharge, MyMobile.Battery.Charger);
+                    Thread.Sleep(500);
+                }               
+            }
         }
 
-        private void timer_Tick(object sender, EventArgs e) {
-            createMessage();
-        }
-
-        private void createMessage() {
-            while (checkBoxMessages.Checked == true) {
-                MyMessage message = new MyMessage();
-                FormatDelegate currentFormat;
-                currentFormat = Format.GetFormatType(comboBox1);
-                if (message.Text != null) {
-                    myReceivedMessages.Add(message);
-                    MyMobile.SMSProvider.addUserToComboBox(comboBox2, message);
-                }
-                List<MyMessage> listToDisplay = new List<MyMessage>();
-                listToDisplay = myReceivedMessages;
-                MyFilter filter = new MyFilter();
-                object selectedUser = MyMobile.SMSProvider.selectUser(comboBox2);
-                if (checkBoxAndLogic.Checked == true) {
-                    listToDisplay = filter.FilterAnd(myReceivedMessages, selectedUser, textBox1.Text, dateTimePicker1.Value, dateTimePicker2.Value);
-                }
-                if (checkBoxOrLogic.Checked == true) {
-                    listToDisplay = filter.FilterOr(myReceivedMessages, selectedUser, textBox1.Text, dateTimePicker1.Value, dateTimePicker2.Value);
-                }
-
-                Format.ShowMessages(MessageListView, listToDisplay, currentFormat);
-                MyMobile.SMSProvider.ReceiveSMS(message);
-                Thread.Sleep(2000);
-            }           
+        private void Discharge() {
+            while (MyMobile.Battery.Charger>0) {
+                lock (MyMobile.Battery) {                    
+                    MyMobile.Battery.Charger -= 1;
+                    MyMobile.Battery.DisplayChargeChanges(progressBarCharge, MyMobile.Battery.Charger);
+                    Thread.Sleep(500);
+                }                                                          
+            }          
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e) {
             if (checkBoxOrLogic.Checked == true) { checkBoxAndLogic.Checked = false; }
+            FormatAndFilter();
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e) {
             if (checkBoxAndLogic.Checked == true) { checkBoxOrLogic.Checked = false; }
+            FormatAndFilter();
         }
 
         private void checkBox1_CheckedChanged_1(object sender, EventArgs e) {
@@ -83,6 +72,66 @@ namespace SimCorp.IMS.SMSReceiverWFA {
              }
               else 
               { t.Abort(); }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
+            FormatAndFilter();
+        }
+
+        private void createMessage() {
+            while (checkBoxMessages.Checked == true) {
+                MyMessage message = new MyMessage();
+                FormatAndFilter();
+                if (message.Text != null) {
+                    myReceivedMessages.Add(message);
+                    MyMobile.SMSProvider.addUserToComboBox(comboBox2, message);
+                }
+                Thread.Sleep(1500);
+                MyMobile.SMSProvider.ReceiveSMS(message);
+            }
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) {
+            FormatAndFilter();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e) {
+            FormatAndFilter();
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e) {
+            FormatAndFilter();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e) {
+            FormatAndFilter();
+        }
+
+        public void FormatAndFilter() {
+            FormatDelegate currentFormat;
+            currentFormat = Format.GetFormatType(comboBox1);
+            List<MyMessage> listToDisplay = new List<MyMessage>();
+            listToDisplay = myReceivedMessages;
+            MyFilter filter = new MyFilter();           
+            object selectedUser = new object(); 
+            if (comboBox2.Created) { selectedUser = MyMobile.SMSProvider.selectUser(comboBox2); }
+            
+            listToDisplay = filter.ApplyFilter(filter, myReceivedMessages, selectedUser, textBox1.Text, dateTimePicker1.Value, dateTimePicker2.Value, checkBoxAndLogic, checkBoxOrLogic);
+            Format.ShowMessages(MessageListView, listToDisplay, currentFormat);
+        }
+
+        private void checkBoxCharge_CheckedChanged(object sender, EventArgs e) {
+            
+            if (checkBoxCharge.Checked == false) {               
+                //chargerCharge.Abort();
+                //chargerDischarge.Suspend();
+                //chargerDischarge.Start();
+            }
+            if (checkBoxCharge.Checked == true) {
+                chargerCharge.Start();
+                // chargerDischarge.Abort();
+                //chargerCharge.Start();
+            }
         }
     }
 }

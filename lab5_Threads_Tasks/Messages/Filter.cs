@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace SimCorp.IMS.Messages {
     public class MyFilter {
@@ -48,5 +49,16 @@ namespace SimCorp.IMS.Messages {
                 select m).ToList();
             return myFilteredMessages;
         }
+
+        public List<MyMessage> ApplyFilter(MyFilter filter, List<MyMessage> myReceivedMessages, object selectedUser, string text, DateTime value1, DateTime value2, CheckBox checkBoxAndLogic, CheckBox checkBoxOrLogic) {
+            if (checkBoxAndLogic.Checked == true) {
+                return filter.FilterAnd(myReceivedMessages, selectedUser, text, value1, value2);
+            }
+            else {
+                return filter.FilterOr(myReceivedMessages, selectedUser, text, value1, value2);
+            }
+        }
+
+        
     }
 }

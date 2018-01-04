@@ -68,6 +68,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(254, 21);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // MessageListView
             // 
@@ -98,6 +99,7 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(254, 21);
             this.comboBox2.TabIndex = 4;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -135,6 +137,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(254, 20);
             this.textBox1.TabIndex = 8;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // dateTimePicker1
             // 
@@ -143,6 +146,7 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(124, 20);
             this.dateTimePicker1.TabIndex = 9;
             this.dateTimePicker1.Value = new System.DateTime(2018, 1, 1, 0, 0, 0, 0);
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // dateTimePicker2
             // 
@@ -150,6 +154,7 @@
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(124, 20);
             this.dateTimePicker2.TabIndex = 10;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // label4
             // 
@@ -235,6 +240,7 @@
             this.checkBoxCharge.TabIndex = 19;
             this.checkBoxCharge.Text = "Charge";
             this.checkBoxCharge.UseVisualStyleBackColor = true;
+            this.checkBoxCharge.CheckedChanged += new System.EventHandler(this.checkBoxCharge_CheckedChanged);
             // 
             // SMSReceiverForm
             // 
@@ -260,7 +266,6 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.richTextBox1);
             this.Name = "SMSReceiverForm";
-            this.Load += new System.EventHandler(this.SMSReceiverForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
