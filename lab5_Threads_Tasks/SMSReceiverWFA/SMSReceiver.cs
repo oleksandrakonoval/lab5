@@ -29,30 +29,35 @@ namespace SimCorp.IMS.SMSReceiverWFA {
             MyMobile.Storage.SMSAdded += (message) => MyMobile.Storage.LogAdd(storageLogTextBox, message);
             MyMobile.Storage.SMSRemoved += (message) => MyMobile.Storage.LogRemove(storageLogTextBox, message);
 
-            chargerDischarge = new Thread(Discharge);
-            chargerCharge = new Thread(Charge);
+            chargerDischarge = new Thread(Discharge) { IsBackground = true };
+            chargerCharge = new Thread(Charge) { IsBackground = true };
             chargerDischarge.Start();
+            chargerCharge.Start();
             
         }
 
         private void Charge() {
-            while (MyMobile.Battery.Charger < 100) {
-                lock (MyMobile.Battery) {                   
-                    MyMobile.Battery.Charger += 1;                    
-                    MyMobile.Battery.DisplayChargeChanges(progressBarCharge, MyMobile.Battery.Charger);
-                    Thread.Sleep(500);
-                }               
+            while (true) {
+                if (MyMobile.Battery.Charger < 100 && checkBoxCharge.Checked == true) {
+                    lock (MyMobile.Battery) {
+                        MyMobile.Battery.Charger += 1;
+                        MyMobile.Battery.DisplayChargeChanges(progressBarCharge, MyMobile.Battery.Charger);
+                        Thread.Sleep(500);
+                    }
+                }
             }
         }
 
         private void Discharge() {
-            while (MyMobile.Battery.Charger>0) {
-                lock (MyMobile.Battery) {                    
-                    MyMobile.Battery.Charger -= 1;
-                    MyMobile.Battery.DisplayChargeChanges(progressBarCharge, MyMobile.Battery.Charger);
-                    Thread.Sleep(500);
-                }                                                          
-            }          
+            while (true) {
+                if (MyMobile.Battery.Charger > 0 && checkBoxCharge.Checked == false) {
+                    lock (MyMobile.Battery) {
+                        MyMobile.Battery.Charger -= 1;
+                        MyMobile.Battery.DisplayChargeChanges(progressBarCharge, MyMobile.Battery.Charger);
+                        Thread.Sleep(1000);
+                    }
+                }                                                                     
+            }    
         }
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e) {
@@ -66,12 +71,15 @@ namespace SimCorp.IMS.SMSReceiverWFA {
         }
 
         private void checkBox1_CheckedChanged_1(object sender, EventArgs e) {
-             Thread t = new Thread(new ThreadStart(createMessage));
-               if (checkBoxMessages.Checked==true) {
-                  t.Start();
-             }
-              else 
-              { t.Abort(); }
+            generateMessages();
+        }
+
+        public void generateMessages() {
+            Thread t = new Thread(new ThreadStart(createMessage)) { IsBackground = true };
+            if (checkBoxMessages.Checked == true) {
+                t.Start();
+            }
+            else { t.Abort(); }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
@@ -118,20 +126,6 @@ namespace SimCorp.IMS.SMSReceiverWFA {
             
             listToDisplay = filter.ApplyFilter(filter, myReceivedMessages, selectedUser, textBox1.Text, dateTimePicker1.Value, dateTimePicker2.Value, checkBoxAndLogic, checkBoxOrLogic);
             Format.ShowMessages(MessageListView, listToDisplay, currentFormat);
-        }
-
-        private void checkBoxCharge_CheckedChanged(object sender, EventArgs e) {
-            
-            if (checkBoxCharge.Checked == false) {               
-                //chargerCharge.Abort();
-                //chargerDischarge.Suspend();
-                //chargerDischarge.Start();
-            }
-            if (checkBoxCharge.Checked == true) {
-                chargerCharge.Start();
-                // chargerDischarge.Abort();
-                //chargerCharge.Start();
-            }
         }
     }
 }

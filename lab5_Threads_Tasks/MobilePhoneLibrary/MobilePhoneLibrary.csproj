@@ -65,6 +65,7 @@
     <Compile Include="General\WFAOutputRichTextBox.cs" />
     <Compile Include="Images\Image.cs" />
     <Compile Include="Images\IScreenImage.cs" />
+    <Compile Include="MobilePhoneComponents\BaseThreadProcesses.cs" />
     <Compile Include="MobilePhoneComponents\Battery.cs" />
     <Compile Include="MobilePhoneComponents\Camera.cs" />
     <Compile Include="MobilePhoneComponents\Charger\Chargerfactory.cs" />

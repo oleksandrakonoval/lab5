@@ -13,8 +13,17 @@ namespace SimCorp.IMS.MobilePhoneLibrary.MobilePhoneComponents {
         public BatteryType BatteryType { get; set; }
 
         public double Capacity { get; set; }
+       
+        private int charger;
 
-        public int Charger { get; set; }
+        public int Charger {
+            get { return charger; }
+            set {
+                if (value > 100) charger = 100;
+                else if (value < 0) charger = 0;
+                else charger = value;
+            }
+        }
 
         public Battery():this(200, (BatteryType)0) {
             this.Capacity = 200;

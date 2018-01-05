@@ -2,6 +2,7 @@
 using System;
 using System.Windows.Forms;
 using System.Collections.Generic;
+using System.Threading;
 
 namespace SimCorp.IMS.MobilePhoneLibrary.Provider {
     public class SMSProvider {
@@ -38,6 +39,7 @@ namespace SimCorp.IMS.MobilePhoneLibrary.Provider {
             }
             return comboBox.SelectedItem;
         }
+        
 
     }
 }
