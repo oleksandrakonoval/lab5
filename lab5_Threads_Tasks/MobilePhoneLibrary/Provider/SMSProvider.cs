@@ -1,5 +1,6 @@
 ﻿using SimCorp.IMS.Messages;
 using System;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace SimCorp.IMS.MobilePhoneLibrary.Provider {
@@ -37,6 +38,16 @@ namespace SimCorp.IMS.MobilePhoneLibrary.Provider {
             return comboBox.SelectedItem;
         }
 
-        public abstract void generateMessages(CheckBox checkbox);       
+        public abstract void generateMessages(CheckBox checkbox);
+
+        public void createMessage(CheckBox checkbox) {
+            while (checkbox.Checked) {
+                MyMessage message = new MyMessage();
+                if (message.Text != null) {
+                    ReceiveSMS(message);
+                    Thread.Sleep(1500);
+                }
+            }
+        }
     }
 }

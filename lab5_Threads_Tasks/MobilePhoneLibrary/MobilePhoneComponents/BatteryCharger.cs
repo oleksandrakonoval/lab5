@@ -18,8 +18,32 @@ namespace SimCorp.IMS.MobilePhoneLibrary.MobilePhoneComponents {
             }
         }
 
-        public abstract void Charge(CheckBox checkBoxCharge, ProgressBar progressBarCharge);
-        public abstract void Discharge(CheckBox checkBoxCharge, ProgressBar progressBarCharge);
+        public void Charge(CheckBox checkBoxCharge, ProgressBar progressBarCharge) {
+            while (true) {
+                if (Charger < 100 && checkBoxCharge.Checked == true) {
+                    lock (this) {
+                        Charger += 1;
+                        DisplayChargeChanges(progressBarCharge, Charger);
+                        Thread.Sleep(500);
+                    }
+                }
+            }
+        }
+
+        public void Discharge(CheckBox checkBoxCharge, ProgressBar progressBarCharge) {
+            while (true) {
+                if (Charger > 0 && checkBoxCharge.Checked == false) {
+                    lock (this) {
+                        Charger -= 1;
+                        DisplayChargeChanges(progressBarCharge, Charger);
+                        Thread.Sleep(1000);
+                    }
+                }
+            }
+        }
+
+       // public abstract void Charge(CheckBox checkBoxCharge, ProgressBar progressBarCharge);
+       // public abstract void Discharge(CheckBox checkBoxCharge, ProgressBar progressBarCharge);
 
         public void DisplayChargeChanges(ProgressBar progressBarCharge, int charger) {
             if (progressBarCharge.InvokeRequired) {
