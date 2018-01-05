@@ -26,9 +26,10 @@ namespace SimCorp.IMS.MobilePhoneLibrary.MobilePhone {
         public ICharger ChargerComponenet { get; set; }
 
         public Mobile() {
-            SMSProvider = new SMSProvider();
+            SMSProvider = new SMSProviderWithTread();
             Storage = new MyStorage();
             SMSProvider.SMSReceived += (message) => Storage.Add(message);
+            //SMSProvider.SMSReceived+=
         }
 
         private void Show(IScreenImage screenImage) {

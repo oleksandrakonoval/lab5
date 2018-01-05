@@ -1,6 +1,7 @@
 ﻿using SimCorp.IMS.Messages;
 using SimCorp.IMS.MobilePhoneLibrary.General;
 using SimCorp.IMS.MobilePhoneLibrary.MobilePhone;
+using SimCorp.IMS.MobilePhoneLibrary.MobilePhoneComponents;
 using System;
 using System.Collections.Generic;
 using System.Threading;
@@ -15,8 +16,10 @@ namespace SimCorp.IMS.SMSReceiverWFA {
         SimCorpMobile MyMobile;
         Format Format = new Format();
         List<MyMessage> myReceivedMessages = new List<MyMessage>();
-        Thread chargerDischarge;
-        Thread chargerCharge;
+      //  BattaryCharger MyCharger;
+
+        //Thread chargerDischarge;
+        //Thread chargerCharge;
 
         public SMSReceiverForm() {
             InitializeComponent();
@@ -26,17 +29,25 @@ namespace SimCorp.IMS.SMSReceiverWFA {
 
             MyMobile = new SimCorpMobile();
             output = new WFAOutputRichTextBox(richTextBox1);
+            MyMobile.Storage.SMSAdded += (message) => FormatAndFilter();
             MyMobile.Storage.SMSAdded += (message) => MyMobile.Storage.LogAdd(storageLogTextBox, message);
+            MyMobile.Storage.SMSAdded += (message) => myReceivedMessages.Add(message);
+            MyMobile.Storage.SMSAdded += (message) => MyMobile.SMSProvider.addUserToComboBox(comboBox2, message);
             MyMobile.Storage.SMSRemoved += (message) => MyMobile.Storage.LogRemove(storageLogTextBox, message);
+            MyMobile.Battery.BatteryCharger = new BatteryChargerWithTreads();
+            MyMobile.Battery.BatteryCharger.Charger = 100;
+            MyMobile.Battery.BatteryCharger.executeCharge(checkBoxCharge, progressBarCharge);
 
-            chargerDischarge = new Thread(Discharge) { IsBackground = true };
-            chargerCharge = new Thread(Charge) { IsBackground = true };
-            chargerDischarge.Start();
-            chargerCharge.Start();
-            
+
+
+            /* chargerDischarge = new Thread(Discharge) { IsBackground = true };
+             chargerCharge = new Thread(Charge) { IsBackground = true };
+             chargerDischarge.Start();
+             chargerCharge.Start();*/
+
         }
 
-        private void Charge() {
+     /*   public void Charge() {
             while (true) {
                 if (MyMobile.Battery.Charger < 100 && checkBoxCharge.Checked == true) {
                     lock (MyMobile.Battery) {
@@ -48,7 +59,7 @@ namespace SimCorp.IMS.SMSReceiverWFA {
             }
         }
 
-        private void Discharge() {
+        public void Discharge() {
             while (true) {
                 if (MyMobile.Battery.Charger > 0 && checkBoxCharge.Checked == false) {
                     lock (MyMobile.Battery) {
@@ -58,7 +69,7 @@ namespace SimCorp.IMS.SMSReceiverWFA {
                     }
                 }                                                                     
             }    
-        }
+        }*/
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e) {
             if (checkBoxOrLogic.Checked == true) { checkBoxAndLogic.Checked = false; }
@@ -71,33 +82,32 @@ namespace SimCorp.IMS.SMSReceiverWFA {
         }
 
         private void checkBox1_CheckedChanged_1(object sender, EventArgs e) {
-            generateMessages();
+            MyMobile.SMSProvider.generateMessages(checkBoxMessages);                 
         }
 
-        public void generateMessages() {
+
+
+        /*public void generateMessages() {
             Thread t = new Thread(new ThreadStart(createMessage)) { IsBackground = true };
             if (checkBoxMessages.Checked == true) {
                 t.Start();
             }
             else { t.Abort(); }
-        }
+        }*/
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e) {
             FormatAndFilter();
         }
 
-        private void createMessage() {
+       /* private void createMessage() {
             while (checkBoxMessages.Checked == true) {
-                MyMessage message = new MyMessage();
                 FormatAndFilter();
                 if (message.Text != null) {
                     myReceivedMessages.Add(message);
                     MyMobile.SMSProvider.addUserToComboBox(comboBox2, message);
                 }
-                Thread.Sleep(1500);
-                MyMobile.SMSProvider.ReceiveSMS(message);
             }
-        }
+        }*/
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e) {
             FormatAndFilter();
@@ -127,5 +137,6 @@ namespace SimCorp.IMS.SMSReceiverWFA {
             listToDisplay = filter.ApplyFilter(filter, myReceivedMessages, selectedUser, textBox1.Text, dateTimePicker1.Value, dateTimePicker2.Value, checkBoxAndLogic, checkBoxOrLogic);
             Format.ShowMessages(MessageListView, listToDisplay, currentFormat);
         }
+
     }
 }

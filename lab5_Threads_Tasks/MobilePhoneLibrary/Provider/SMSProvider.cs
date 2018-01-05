@@ -1,13 +1,10 @@
 ﻿using SimCorp.IMS.Messages;
 using System;
 using System.Windows.Forms;
-using System.Collections.Generic;
-using System.Threading;
 
 namespace SimCorp.IMS.MobilePhoneLibrary.Provider {
-    public class SMSProvider {
+    public abstract class SMSProvider {
 
-        // public delegate void SMSRecievedDelegate(string message);
         public delegate void SMSRecievedDelegate(MyMessage message);
 
         public event SMSRecievedDelegate SMSReceived;
@@ -39,7 +36,7 @@ namespace SimCorp.IMS.MobilePhoneLibrary.Provider {
             }
             return comboBox.SelectedItem;
         }
-        
 
+        public abstract void generateMessages(CheckBox checkbox);       
     }
 }

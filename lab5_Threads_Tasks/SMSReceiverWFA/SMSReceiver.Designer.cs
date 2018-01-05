@@ -240,7 +240,6 @@
             this.checkBoxCharge.TabIndex = 19;
             this.checkBoxCharge.Text = "Charge";
             this.checkBoxCharge.UseVisualStyleBackColor = true;
-            //this.checkBoxCharge.CheckedChanged += new System.EventHandler(this.checkBoxCharge_CheckedChanged);
             // 
             // SMSReceiverForm
             // 
