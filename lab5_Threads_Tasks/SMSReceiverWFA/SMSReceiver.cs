@@ -30,8 +30,9 @@ namespace SimCorp.IMS.SMSReceiverWFA {
             MyMobile.Storage.SMSAdded += (message) => myReceivedMessages.Add(message);
             MyMobile.Storage.SMSAdded += (message) => MyMobile.SMSProvider.addUserToComboBox(comboBox2, message);
             MyMobile.Storage.SMSRemoved += (message) => MyMobile.Storage.LogRemove(storageLogTextBox, message);
-            //MyMobile.Battery.BatteryCharger = new BatteryChargerWithTreads();
-            MyMobile.Battery.BatteryCharger = new BatteryChargerWithTask();
+
+           // MyMobile.Battery.BatteryCharger = BatteryChargerFactoty.GetBatteryType("BatteryChargerWithTreads");
+            MyMobile.Battery.BatteryCharger = BatteryChargerFactoty.GetBatteryType("BatteryChargerWithTask");
             MyMobile.Battery.BatteryCharger.Charger = 100;
             MyMobile.Battery.BatteryCharger.executeCharge(checkBoxCharge, progressBarCharge);
 

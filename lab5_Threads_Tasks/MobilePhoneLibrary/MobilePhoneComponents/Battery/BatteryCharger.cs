@@ -42,9 +42,6 @@ namespace SimCorp.IMS.MobilePhoneLibrary.MobilePhoneComponents {
             }
         }
 
-       // public abstract void Charge(CheckBox checkBoxCharge, ProgressBar progressBarCharge);
-       // public abstract void Discharge(CheckBox checkBoxCharge, ProgressBar progressBarCharge);
-
         public void DisplayChargeChanges(ProgressBar progressBarCharge, int charger) {
             if (progressBarCharge.InvokeRequired) {
                 progressBarCharge.Invoke(new Action<ProgressBar, int>(DisplayChargeChanges), progressBarCharge, charger);

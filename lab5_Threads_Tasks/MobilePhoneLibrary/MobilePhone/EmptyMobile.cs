@@ -3,15 +3,7 @@ using SimCorp.IMS.MobilePhoneLibrary.MobilePhoneComponents;
 
 namespace SimCorp.IMS.MobilePhoneLibrary.MobilePhone {
     public class EmptyMobile : Mobile {
-        public override Battery Battery {
-            get {
-                throw new NotImplementedException();
-            }
-
-            set {
-                throw new NotImplementedException();
-            }
-        }
+        public override Battery Battery { get; set; }
 
         public override Camera Camera {
             get {
